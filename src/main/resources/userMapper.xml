@@ -1,0 +1,12 @@
+<mapper namespace="com.crm.mapper.UserMapper">
+
+    <resultMap type="User" id="userMap">
+        <id property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+    </resultMap>
+
+    <select id="getUserByName" parameterType="string" resultMap="userMap">
+        select * from blog where name = #{username}
+    </select>
+</mapper>
